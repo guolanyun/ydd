@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--修改视口-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <title>Title</title>
+</head>
+<style>
+    .box{
+        width: 200px;
+        height: 200px;
+        background:red;
+        font-size: 60px;
+        color: #fff;
+    }
+</style>
+<body>
+
+<!--cookie:存储的一个文件，以字符串形式，以键值对的格式存储-->
+       <!--存储量：4KB大小-->
+       <!--不能跨浏览器访问-->
+       <!--不可跨域访问-->
+       <!--安全性低-->
+       <!--临时性：生命周期：浏览器打开到浏览器关闭-->
+
+<!--本地存储-->
+<!--正则-->
+<!--数据可视化-->
+<!--resize：输出窗口大小-->
+<!--移动端事件-->
+<!--touchstart     touchmove    touchend-->
+<div class="box"></div>
+
+
+
+</body>
+</html>
+
+<script>
+
+//    document.cookie="aa=bb";
+//    document.cookie="bb=cc";
+//    console.log(document.cookie);
+//
+//    let now=new Date();
+//    now.setTime(now.getTime()+20*1000);
+//    document.cookie="aa=bb;expires="+now.toGMTString();
+//    console.log(document.cookie);
+
+//    function setCookie(key,value,time) {
+//        if(time){
+//            let t=new Date;
+//            t.setTime(t.getTime()+20*1000);
+//            document.cookie=key+"="+value+";expires="+t.toGMTString();
+//        }else{
+//            document.cookie=key+"="+value;
+//        }
+//    }
+//
+//    function getCookie(key){
+//        let cookies=document.cookie;
+//        let arr=cookies.split(';');
+//        for(let i=0;i<arr.length;i++){
+//            let brr=arr[i].split('=');
+//            if(brr[0]===key){
+//                return brr[1];
+//            }else{
+//                return false;
+//            }
+//        }
+//    }
+//
+//    function delCookie(key){
+//        let t=new Date();
+//        t.setTime(t.getTime()-1);
+//        document.cookie=key+"svd;expires="+t.toGMTString();
+//    }
+//
+//    setCookie('aa','bb','123');
+//    setCookie('cc','bb','20');
+//
+//    getCookie('aa');
+
+
+
+//localStorage    永久存储
+//                大小   5-10M
+//                不能跨浏览器访问
+//                不能跨域访问
+//                不安全的（安全性低）
+//                只能存储字符串（任意形式的字符串）
+//
+//sessionStorage      绘画级存储
+//                    大小   5-10M
+//                    不能跨浏览器访问
+//                    不能跨域访问
+//                    不安全的（安全性低）
+//                    只能存储字符串（任意形式的字符串）
+
+//localStorage.data='123';
+//sessionStorage.aa='bb';
+//console.log(localStorage.data);
+//console.log(sessionStorage.aa);
+
+//location 一种使用方式
+//let obj={name:'lisi'};
+//let arr=[1,2,4,5,6];
+//localStorage.obj=JSON.stringify(obj);
+//localStorage.arr=JSON.stringify(arr);
+//console.log(JSON.parse(localStorage.obj));
+//console.log(JSON.parse(localStorage.arr));
+
+let box=document.querySelector('.box');
+box.ontouchstart=function (e) {
+    this.innerHTML=e.changedTouches.length;
+}
+
+box.ontouchmove=function (e) {
+    this.innerHTML=e.changedTouches.length;
+}
+box.ontouchend=function (e) {
+    this.innerHTML=e.changedTouches.length;
+}
+
+//touches 触发事件页面中所有手指的信息
+//targetTouches 触发事件页面中在当前元素上的所有手指的信息
+//changesTouches 触发事件页面中，从上一次触发事件以来触发事件的手指的信息
+
+
+</script>
